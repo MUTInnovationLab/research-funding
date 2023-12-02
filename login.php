@@ -148,11 +148,41 @@ button:hover,
 .icon-button span:hover{
   background-color: #babecc8c;
 }
+
+@media only screen and (max-width: 300px) {
+    /* Adjustments for smaller screens */
+    .content {
+      width: 100%; /* Further adjusted width for smaller screens */
+      padding: 30px 15px; /* Further adjusted padding for smaller screens */
+    }
+    .field input {
+      font-size: 14px; /* Further adjusted font size for smaller screens */
+    }
+    form{
+      width: 90%;
+    }
+  }
+  @media only screen and (max-width: 1024px)  {
+  
+    .content {
+      width: 100%; 
+      padding: 40px 30px;
+      height: 100%;
+    }
+    button {
+      font-size: 18px; 
+    }
+
+    form {
+      width: 90%; 
+    }
+  }
+
 </style>
 </head>
 <?php
 session_start(); 
-include "conn.php";
+//include "conn.php";
 
 //FINDING CURRENT DATE AND TIME
 $date_time = date("Y/m/d")."-".date("h:i:sa");
