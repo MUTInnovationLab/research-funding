@@ -35,13 +35,13 @@ $location = $_SESSION['location'];
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "syandangwane1998@gmail.com";
+	$mail->Username = "vgwala149@gmail.com";
 //Set gmail password
-	$mail->Password = "zizbyadiyzslvcdj";
+	$mail->Password = "augzihvfqsdvfpav";
 //Email subject
 	$mail->Subject = $subject;
 //Set sender email
-	$mail->setFrom('syandangwane1998@gmail.com');
+	$mail->setFrom('vgwala149@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment

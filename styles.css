@@ -39,7 +39,7 @@
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: 50px;
+  margin-left: 0px;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -78,6 +78,7 @@
   color: var(--main-text-color);
   font-weight: bold;
   border: none;
+
 }
 
 @media (min-width: 768px) {
@@ -92,5 +93,11 @@
 
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #sidebar-wrapper .list-group {
+    width: 100%; /* Set to 100% on smaller screens */
   }
 }

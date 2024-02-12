@@ -63,9 +63,10 @@
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
 <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
+        <div class="bg-white" id="sidebar-wrapper" >
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-            <img src="img/logo.PNG" style="width:200px; height:100px;"></i></div>
+            <img src="img/mut.png" style="width:200px; height:100px;"></i>
+           </div>
             <div class="list-group list-group-flush my-3">
                 <!-- ------------------------------------------------------------------------------------------ -->
                 <a style="margin-top: -25px;" href="applications.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
@@ -80,8 +81,8 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                     <h2 class="fs-2 m-0">Dashboard</h2>
@@ -89,7 +90,7 @@
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -215,12 +216,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
-
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("wrapper").classList.toggle("toggled");
+        });
     </script>
     </form>
 </body>

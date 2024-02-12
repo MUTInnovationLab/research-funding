@@ -182,7 +182,7 @@ button:hover,
 </head>
 <?php
 session_start(); 
-//include "conn.php";
+include "conn.php";
 
 //FINDING CURRENT DATE AND TIME
 $date_time = date("Y/m/d")."-".date("h:i:sa");
