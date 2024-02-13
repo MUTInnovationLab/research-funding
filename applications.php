@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- list-group -->
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Applications</title>
     <style>
         .input{
@@ -50,6 +50,7 @@
         border-radius: 5px;
         margin-top: 0px;
         }
+      
     </style>
 </head>
 <?php
@@ -68,24 +69,27 @@
             <img src="img/mut.png" style="width:200px; height:100px;"></i>
            </div>
             <div class="list-group list-group-flush my-3">
-                <!-- ------------------------------------------------------------------------------------------ -->
+                
                 <a style="margin-top: -25px;" href="applications.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
                     ></i>Applications</a>
                 <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i
                     ></i>Application Details</a>
-                <!-- ------------------------------------------------------------------------------------------ -->
+                
                 <a href="login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
-            </div>
-        </div>
+            
+                </div>
+</div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
     <div id="page-content-wrapper">
         <nav class="navbar navbar-expand navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
+                <!-- <i class="fas fa-align-left primary-text fs-4 me-3 " id="menu-toggle"></i> -->
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+
+                <h2 class="fs-2 m-0 dashboard">Dashboard</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -97,7 +101,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <i class="fas fa-user me-2"></i><b><?php echo $currentUser  ?></b>
+                            <i class="fas fa-user me-2"></i><b id = "current"><?php echo $currentUser  ?></b>
                         </li>
                     </ul>
                 </div>
@@ -162,7 +166,8 @@
                         $result = $conn-> query($sql);
                         echo "<hr style='margin-top:20px;'>";
                         echo "<h4 style='text-align:center; margin-bottom:20px;'>Accepted Applications Waiting For Next Approval</h4>";
-                        if ($result-> num_rows > 0){	
+                        if ($result-> num_rows > 0){
+                        echo "<div class='table-container'>";	//new
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -199,7 +204,7 @@
                             echo "<th scope='row'>$status</th>";
                             echo "</tr>";   
                             }
-                            echo "</tbody>";   echo "<table>";    echo "</div>";
+                            echo "</tbody>";   echo "<table>"; echo "<div>";  echo "</div>";
                         } else{
                             echo "<div class='content' style='border: 1px solid; border-radius: 10px;'>";
                             echo "<p class='error' style='margin-top: 10px' >No Records Found!!!</p>";
@@ -215,11 +220,15 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+  
     <script>
-      document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.getElementById("wrapper").classList.toggle("toggled");
-        });
-    </script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const wrapper = document.getElementById('wrapper');
+
+  menuToggle.addEventListener('click', function() {
+    wrapper.classList.toggle('toggled');
+  });
+</script>
     </form>
 </body>
 

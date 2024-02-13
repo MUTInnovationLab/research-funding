@@ -98,6 +98,10 @@
 
 @media (max-width: 767px) {
   #sidebar-wrapper .list-group {
-    width: 100%; /* Set to 100% on smaller screens */
+    width: 100%; 
   }
+  
 }
+
+
+
