@@ -56,13 +56,25 @@
 
         .table-container {
             height: auto;
-            overflow-x: scroll; /* Enable vertical scrollbar */
+            overflow-x: scroll;
+            /* Enable vertical scrollbar */
         }
 
         .table-container2 {
             height: auto;
-            overflow-x: scroll; /* Enable vertical scrollbar for the second table */
+            overflow-x: scroll;
+            /* Enable vertical scrollbar for the second table */
         }
+        #sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+        z-index: 2; /* Ensure the overlay is on top of the content */
+    }
     </style>
 </head>
 <?php
@@ -81,15 +93,9 @@ if (empty($currentUser)) $currentUser = "Default User";
                     <img src="img/mut.png" style="width:200px; height:100px;">
                 </div>
                 <div class="list-group list-group-flush my-3">
-                    <a style="margin-top: -25px;" href="#"
-                        class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
-                            ></i>Applications</a>
-                    <a style="margin-top: -25px;" href="#"
-                        class="list-group-item list-group-item-action bg-transparent second-text"><i
-                            ></i>Application Details</a>
-                    <a href="login.php"
-                        class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                            class="fas fa-power-off me-2"></i>Logout</a>
+                    <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i></i>Applications</a>
+                    <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i></i>Application Details</a>
+                    <a href="login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
                 </div>
             </div>
 
@@ -101,9 +107,7 @@ if (empty($currentUser)) $currentUser = "Default User";
                         <h2 class="fs-2 m-0">Dashboard</h2>
                     </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -235,10 +239,12 @@ if (empty($currentUser)) $currentUser = "Default User";
             var el = document.getElementById("wrapper");
             var toggleButton = document.getElementById("menu-toggle");
 
-            toggleButton.onclick = function () {
+            toggleButton.onclick = function() {
                 el.classList.toggle("toggled");
             };
         </script>
+
+<!-- <div id="sidebar-overlay"></div> -->
     </form>
 </body>
 
