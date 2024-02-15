@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Applications</title>
     <style>
         .input{
@@ -65,9 +65,9 @@
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
 <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
+        <div class="bg-white  positioning" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-            <img src="img/logo.PNG" style="width:200px; height:100px;"></i></div>
+            <img src="img/logo.png" style="width:200px; height:100px;"></i></div>
             <div class="list-group list-group-flush my-3">
                 <!-- ------------------------------------------------------------------------------------------ -->
                 <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
@@ -89,11 +89,11 @@
                     <h2 class="fs-2 m-0">Dashboard</h2>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> -->
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -123,7 +123,8 @@
                     $sql = "SELECT * FROM applications WHERE statuss='Accepted By HOD. Waiting For Sfiso Approval'";
                     $result = $conn-> query($sql);
                     echo "<h4 style='text-align:center; margin-bottom:20px;'>Applications Waiting For Your Approval</h4>";
-                    if ($result-> num_rows > 0){	
+                    if ($result-> num_rows > 0){
+                        echo "<div class='table-container'>";	//scroll-y
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -153,7 +154,7 @@
                             echo "<td><button type='submit' class='btn' value='$email' name='btn_view'>View</button></td>";
                             echo "</tr>";   
                             }
-                            echo "</tbody>";   echo "<table>";    echo "</div>";
+                            echo "</tbody>";   echo "<table>";  echo "</div>";
                         } else{
                             echo "<div class='content' style='border: 1px solid; border-radius: 10px;'>";
                             echo "<p class='error' style='margin-top: 10px' >No Records Found!!!</p>";
@@ -164,7 +165,8 @@
                         $result = $conn-> query($sql);
                         echo "<hr style='margin-top:20px;'>";
                         echo "<h4 style='text-align:center; margin-bottom:20px;'>Accepted Applications Waiting For Next Approval</h4>";
-                        if ($result-> num_rows > 0){	
+                        if ($result-> num_rows > 0){
+                            echo "<div class='table-container'>";	//new
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -198,7 +200,7 @@
                             echo "<th scope='row'>$status</th>";
                             echo "</tr>";   
                             }
-                            echo "</tbody>";   echo "<table>";    echo "</div>";
+                            echo "</tbody>";   echo "<table>";  echo "</div>";  echo "</div>";
                         } else{
                             echo "<div class='content' style='border: 1px solid; border-radius: 10px;'>";
                             echo "<p class='error' style='margin-top: 10px' >No Records Found!!!</p>";

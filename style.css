@@ -83,6 +83,7 @@
 
   .table-container {
     height:auto;
+   
     overflow-y: auto; /* Enable vertical scrollbar*/
   }
   
@@ -115,18 +116,20 @@
         #wrapper.toggled #sidebar-wrapper {
           margin-left: 0; /* Opposite of margin-left: -15rem; */
         }
-        @media (max-width: 750px) {
-            #current{
-                display:none;
-            }
-            .dashboard{
-                font-size: 20px;
-                
-            }
-           
-        }
+      
       }
-
+      @media (max-width: 750px) {
+        #current{
+            display:none;
+        }
+        .dashboard{
+            font-size: 20px;
+            
+        }
+        .positioning{
+          position:absolute;
+        }
+    }
 
 
 
