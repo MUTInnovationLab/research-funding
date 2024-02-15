@@ -89,6 +89,8 @@ if (empty($currentUser)) $currentUser = "Default User";
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
             <div class="bg-white" id="sidebar-wrapper">
+            <button id="close-button"><i class="fas fa-times"></i></button>
+
                 <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                     <img src="img/mut.png" style="width:200px; height:100px;">
                 </div>
