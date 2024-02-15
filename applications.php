@@ -64,7 +64,7 @@
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
 <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper" >
+        <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
             <img src="img/mut.png" style="width:200px; height:100px;"></i>
            </div>
