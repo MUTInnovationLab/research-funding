@@ -181,8 +181,8 @@ button:hover,
 </style>
 </head>
 <?php
-session_start(); 
-//include "conn.php";
+session_start();
+include "conn.php";
 
 //FINDING CURRENT DATE AND TIME
 $date_time = date("Y/m/d")."-".date("h:i:sa");
@@ -208,7 +208,7 @@ $password = validate($_POST['password']);
 		header("Location:  login.php?error=All Fields Are Required!!!"); exit();
 	} else{
 	    $sql = "SELECT * FROM login_details WHERE email='$email' AND passwords='$password'";
-        $result = $conn-> query($sql);
+        $result = $conn -> query($sql);
         if ($result-> num_rows > 0){	
             while($row = $result-> fetch_assoc()){	
                 $role = $row['role'];	
