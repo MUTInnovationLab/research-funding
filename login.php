@@ -181,7 +181,7 @@ button:hover,
 </style>
 </head>
 <?php
-session_start(); 
+session_start();
 include "conn.php";
 
 //FINDING CURRENT DATE AND TIME
