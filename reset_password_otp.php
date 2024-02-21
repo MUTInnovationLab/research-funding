@@ -184,6 +184,7 @@ session_start();
 include "conn.php";
 $reset_email = $_SESSION['reset_email'];
 $reset_password = $_SESSION['reset_password'];
+$hashed_reset_password = password_hash($reset_password, PASSWORD_DEFAULT);
 $reset_otp = $_SESSION['reset_otp'];
 
 //FINDING CURRENT DATE AND TIME
@@ -210,7 +211,7 @@ $otp = validate($_POST['otp']);
 	} else if($otp != $reset_otp){
     header("Location:  reset_password_otp.php?error=Incorrect OTP Code!!!"); exit();
   }else{
-      $sql1 = "UPDATE login_details SET passwords='$reset_password' WHERE email='$reset_email'";
+      $sql1 = "UPDATE login_details SET passwords='$hashed_reset_password' WHERE email='$reset_email'";
       if ($conn->query($sql1) === TRUE) {
         $_SESSION['msg1'] = "Thank You!";
         $_SESSION['msg2'] = "Your password has been changed successfully.";

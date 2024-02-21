@@ -207,10 +207,11 @@ $password = validate($_POST['password']);
     if (empty($email) || empty($password)){
 		header("Location:  login.php?error=All Fields Are Required!!!"); exit();
 	} else{
-	    $sql = "SELECT * FROM login_details WHERE email='$email' AND passwords='$password'";
+	    $sql = "SELECT * FROM login_details WHERE email='$email'";
         $result = $conn-> query($sql);
         if ($result-> num_rows > 0){	
             while($row = $result-> fetch_assoc()){	
+                $stored_password = $row['passwords'];
                 $role = $row['role'];	
                 $name = $row['name'];
                 $status = $row['statuss'];
@@ -218,11 +219,16 @@ $password = validate($_POST['password']);
             if($status == "Blocked"){
               header("Location: login.php?error=Your Account Has Been Blocked. Please Contact The Administrator."); exit();
             }else{
+              if (password_verify($password, $stored_password)) {
               $_SESSION['currentUser'] = $name;
               $_SESSION['c_email'] = $email;
              if($role == "1"){ echo"<script>location.href = 'applications.php?'</script>"; }
              else if($role == "2"){  echo"<script>location.href = 'applications1.php?'</script>";  }
              else if($role == "3"){  echo"<script>location.href = 'applications2.php?'</script>";  };
+            } else {
+              header("Location: login.php?error=Incorrect Incorrect Details");
+              exit();
+          }
             }
         }else { header("Location: login.php?error=Incorrect Details"); exit(); }
      }
