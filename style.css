@@ -103,6 +103,7 @@
   display:none;
 
 }
+
  
   }
  
@@ -144,6 +145,8 @@
           top:0;
           z-index: 1; 
           
+         
+          transition: width 0.3s ease; 
       }
     
       #page-content-wrapper {

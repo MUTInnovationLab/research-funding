@@ -104,6 +104,7 @@
     $name = $_SESSION['staff_name'];
     $email = $_SESSION['staff_email'];
     $password = $_SESSION['staff_password'];
+    $hashed_passord = password_hash($password, PASSWORD_DEFAULT) ;
     $role = $_SESSION['staff_role'];
     $myotp = $_SESSION['staff_otp'];							
     
@@ -121,7 +122,7 @@
         }else{
             $status = "Active";
             $sql2 = "INSERT INTO login_details(name, email, passwords, role, statuss, snumber)
-            VALUES('$name', '$email', '$password', '$role', '$status', '$password')";
+            VALUES('$name', '$email', '$hashed_passord', '$role', '$status', '$password')";
             $result2 = mysqli_query($conn, $sql2);
     
             if ($result2) { 

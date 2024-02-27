@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Application Details</title>
     <style>
         .input{
@@ -68,7 +68,7 @@ $email = $_SESSION['application_id'];
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-            <img src="img/logo.PNG" style="width:200px; height:100px;"></i></div>
+            <img src="img/mut.png" style="width:200px; height:100px;"></i></div>
             <div class="list-group list-group-flush my-3">
                 <!-- ------------------------------------------------------------------------------------------ -->
                 <a style="margin-top: -25px;" href="Applications2.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i

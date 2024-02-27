@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Update Staff</title>
     <style>
         .input {
@@ -32,7 +32,7 @@
             color: #fff;
             border-radius: 5px;
             margin-right: 10px;
-            width: 20%;
+            width: 30%;
             margin-top: 10px;
             margin-bottom: 10px;
             border: none;
@@ -55,7 +55,7 @@
             color: #fff;
             border-radius: 5px;
             margin-right: 10px;
-            width: 20%;
+            width: 25%;
             margin-top: 10px;
             margin-bottom: 10px;
             border: none;
@@ -137,7 +137,7 @@ if(isset($_POST['btn_update'])){
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-            <img src="img/logo.PNG" style="width:200px; height:100px;"></i></div>
+            <img src="img/mut.png" style="width:200px; height:100px;"></i></div>
             <div class="list-group list-group-flush my-3">
                 <!-- ------------------------------------------------------------------------------------------ -->
                 <a style="margin-top: -25px;" href="applications2.php" class="list-group-item list-group-item-action bg-transparent second-text"><i
