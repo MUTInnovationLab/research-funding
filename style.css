@@ -99,7 +99,13 @@
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
+#close-button{
+  display:none;
+
+}
+ 
   }
+ 
   
   @media (max-width: 1050px) {
    
@@ -120,16 +126,24 @@
       @media (max-width: 750px) {
         #current{
             display:none;
+            right:0;
+            top:5px;
         }
         .dashboard{
             font-size: 20px;
             
+        }
+        #close-button{
+          display:block;
+          position:absolute;
+        
         }
       
         #sidebar-wrapper {
           position: fixed;
           top:0;
           z-index: 1; 
+          
       }
     
       #page-content-wrapper {
