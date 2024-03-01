@@ -222,12 +222,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
   
     <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const wrapper = document.getElementById('wrapper');
+    
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu-toggle");
 
-  menuToggle.addEventListener('click', function() {
-    wrapper.classList.toggle('toggled');
-  });
+    toggleButton.onclick = function() {
+        el.classList.toggle("toggled");
+    };
+
+    document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
+
+
 </script>
     </form>
 </body>
