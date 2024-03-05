@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="style.css" />
     <title>Add Staff</title>
     <style>
+
+        body{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
         .input {
             display: block;
             border: 2px solid #ccc;
