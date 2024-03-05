@@ -13,7 +13,7 @@
         .input {
             display: block;
             border: 2px solid #ccc;
-            width: 98%;
+            width: 95%;
             padding: 10px;
             margin-left: 10px;
             margin-right: 10px;
@@ -32,10 +32,11 @@
             color: #fff;
             border-radius: 5px;
             margin-right: 10px;
-            width: 20%;
+            width: 50px;
             margin-top: 10px;
             margin-bottom: 10px;
             border: none;
+            text-align: center;
         }
 
         .btn2 {
@@ -51,14 +52,15 @@
         .btn {
             float: right;
             background: #555;
-            padding: 10px 15px;
+    
             color: #fff;
             border-radius: 5px;
             margin-right: 10px;
-            width: 20%;
+            width: 80px;
             margin-top: 10px;
             margin-bottom: 10px;
             border: none;
+            text-align:center ;
         }
 
         .btn:hover, .btn1:hover{
@@ -261,9 +263,11 @@
                 <option value='1'>Stage 1</option> <option value='2'>Stage 2</option>   <option value="3">Admin</option>
                 </select>
                 <label></label>
-                <button type="submit" class="btn" name="btn_submit">Submit</button>
+                <br>
+                
                 <!-- <a type="submit" class="btn" href="dashboard.php">Back</a> -->
                 </div>
+                <button type="submit" class="btn" name="btn_submit">Submit</button>
             </div>
             </div>
         </div>

@@ -483,7 +483,7 @@
                             echo "<button type='submit' value='videoID' name='btn_reject' class='btn'  
                             style='height: 40px; width:32%; margin-right:15px;'>Reject</button>";
                             echo "<button type='submit' name='btn_back' class='btn'  
-                            style='height: 40px; width:32%; margin-right:11px;'>Back</button>";
+                            style='height: 40px; width:32%; margin-right:11px; margin-top:2px'>Back</button>";
                             echo "<br>";
                             echo "<br>";
                             echo "<br>";

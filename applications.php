@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Applications</title>
@@ -22,8 +24,8 @@
         }
         .btn {
             float: right;
-            background: #555;
-            color: #fff;
+            background: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
             border-radius: 5px;
             margin-right: 10px;
             width: 100%;
@@ -32,6 +34,7 @@
 
         .btn:hover, .btn1:hover{
             opacity: .7;
+            background: #0056b3; /* Button hover background color */
         }
         .error {
         background: #F2DEDE;
@@ -43,14 +46,30 @@
         }
 
         .success {
-        background: #D4EDDA;
-        color: #40754C;
         padding: 10px;
         width: 100%;
         border-radius: 5px;
         margin-top: 0px;
+        background: #F2DEDE;
+        color: #A94442;
         }
-      
+        body {
+        font-family: 'Roboto', sans-serif; /* Use a suitable font family */
+        font-size: 16px; /* Adjust font size as needed */
+        color: #333; /* Set a base text color */
+    }
+
+    h2 {
+        color: #555; /* Header text color */
+    }
+
+ 
+
+ 
+ 
+
+
+
     </style>
 </head>
 <?php
