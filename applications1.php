@@ -89,7 +89,7 @@ if (empty($currentUser)) $currentUser = "Default User";
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
             <div class="bg-white" id="sidebar-wrapper">
-            <button id="close-button"><i class="fas fa-times"></i></button>
+            <!-- <button id="close-button"><i class="fas fa-times"></i></button> -->
 
                 <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                     <img src="img/mut.png" style="width:200px; height:100px;">
@@ -105,7 +105,7 @@ if (empty($currentUser)) $currentUser = "Default User";
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                     <div class="d-flex align-items-center">
-                        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu"></i>
                         <h2 class="fs-2 m-0">Dashboard</h2>
                     </div>
 
@@ -121,7 +121,7 @@ if (empty($currentUser)) $currentUser = "Default User";
                         </ul>
                     </div>
                 </nav>
-
+                  
                 <div class="container-fluid px-4">
                     <div class="row my-5">
                         <?php
@@ -237,14 +237,25 @@ if (empty($currentUser)) $currentUser = "Default User";
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            var el = document.getElementById("wrapper");
-            var toggleButton = document.getElementById("menu-toggle");
+       <!-- //closing menu when you click a body (menu) must be the same name you wrote in the id. -->
+       <script>
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu");
 
-            toggleButton.onclick = function() {
-                el.classList.toggle("toggled");
-            };
-        </script>
+    toggleButton.onclick = function() {
+        el.classList.toggle("toggled");
+    };
+
+    document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
+</script>
+
 
 <!-- <div id="sidebar-overlay"></div> -->
     </form>

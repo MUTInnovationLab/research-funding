@@ -52,6 +52,11 @@
         /* margin: 20px auto; */
         margin-top: 0px;
         }
+        .table-container2 {
+            height: auto;
+            overflow-x: scroll;
+            /* Enable vertical scrollbar for the second table */
+        } 
     </style>
 </head>
 <?php
@@ -355,6 +360,7 @@
                             echo "<h4 style='text-align:center; margin-bottom:20px;'>Budget</h4>";
 
                             // if (isset($_GET['error'])) {  echo "<p class='error'>Please Accept All The Ammounts</p>"; }
+                            echo "<div class='table-container scrollable-table'>";
                             echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                             echo "<thead>";
                             echo "<tr>";
@@ -414,7 +420,8 @@
 
                             echo "</tr>";
                             echo "</tbody>";
-                            echo "<table>";
+                            echo "</table>";
+                            echo "</div>";
                             echo "</div>";
                             // ------------------------------------------------------------
 
@@ -504,6 +511,17 @@
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+      
+
+    document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
     </script>
     </form>
 </body>

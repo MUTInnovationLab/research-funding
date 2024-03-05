@@ -341,6 +341,15 @@ if(empty($currentUser)) $currentUser = "Default User";
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+        document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
     </script>
     </form>
 </body>

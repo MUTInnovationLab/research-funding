@@ -1,102 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Sidebar Overlay</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-    
-    .container {
-        position: relative;
-        display: flex;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar with Transition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-    .main-content {
-        flex: 1;
-        transition: margin-left 0.3s;
-        overflow-x: hidden;
-    }
-
-    .sidebar {
-        height: 100%;
-        width: 0;
-        /* position: fixed; */
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
-
-    .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-        color: #f1f1f1;
-    }
-
-    .sidebar .close-btn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-
-    @media screen and (max-width: 768px) {
         .sidebar {
+            height: 100%;
             width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            z-index: 1; 
         }
 
-        .container.overlay-active .sidebar {
-            width: 0;
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .container.overlay-active .main-content {
-            margin-left: 0;
+        .sidebar ul li {
+            padding: 10px;
         }
-    }
-</style>
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+         
+            margin-left: 0; /* Changed the initial margin-left to 0 */
+            padding: 20px;
+            transition: margin-left 0.5s;
+            z-index: 0; 
+        }
+
+        .toggle-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        .toggle-btn:focus {
+            outline: none;
+        }
+
+        .open {
+            left: 0;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
     <div class="sidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-    </div><!-- Close .sidebar -->
-    <div class="main-content">
-        <header>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-            <h2>Main Content</h2>
-        </header>
-        <p>This is the main content.</p>
+        <button class="toggle-btn" onclick="hideSidebar()">Hide Sidebar</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </div>
-</div>
+    <div class="content">
+        <button class="toggle-btn" onclick="openSidebar()">Open Sidebar</button> <!-- New button to open the sidebar -->
+        <h1>Main Content</h1>
+        <p>This is the main content area.</p>
+    </div>
+    <script>
+        function hideSidebar() {
+            document.querySelector('.sidebar').style.left = "-250px";
+            document.querySelector('.content').style.marginLeft = "0";
+        }
 
-<script>
-    function openNav() {
-        document.querySelector('.container').classList.add('overlay-active');
-    }
-
-    function closeNav() {
-        document.querySelector('.container').classList.remove('overlay-active');
-    }
-</script>
-
+        function openSidebar() {
+            document.querySelector('.sidebar').style.left = "0";
+            document.querySelector('.content').style.marginLeft = "250px";
+        }
+    </script>
 </body>
 </html>

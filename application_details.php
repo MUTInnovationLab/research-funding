@@ -56,6 +56,28 @@
         /* margin: 20px auto; */
         margin-top: 0px;
         }
+
+        .table-container {
+            height: auto;
+            overflow-x: scroll;
+            /* Enable vertical scrollbar */
+        }
+
+        .table-container2 {
+            height: auto;
+            overflow-x: scroll;
+            /* Enable vertical scrollbar for the second table */
+        }
+        #sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+        z-index: 2; /* Ensure the overlay is on top of the content */
+    }
     </style>
 </head>
 <?php
@@ -71,43 +93,40 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-            <img src="img/mut.png" style="width:200px; height:100px;"></i></div>
-            <div class="list-group list-group-flush my-3">
-                <!-- ------------------------------------------------------------------------------------------ -->
-                <a style="margin-top: -25px;" href="Applications.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    ></i>Applications</a>
-                <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                    ></i>Application Details</a>
-                <!-- ------------------------------------------------------------------------------------------ -->
-                <a href="login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
+            <!-- <button id="close-button"><i class="fas fa-times"></i></button> -->
+
+                <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                    <img src="img/mut.png" style="width:200px; height:100px;">
+                </div>
+                <div class="list-group list-group-flush my-3">
+
+                    <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i></i>Applications</a>
+                    <a style="margin-top: -25px;" href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i>Application Details</i></a>
+                    <a href="login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2"></i>Logout</a>
+                </div>
             </div>
-        </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu"></i>
+                        <h2 class="fs-2 m-0">Dashboard</h2>
+                    </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <i class="fas fa-user me-2"></i><b><?php echo $currentUser  ?></b>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <i class="fas fa-user me-2"></i><b><?php echo $currentUser  ?></b>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
             <div class="container-fluid px-4">
 
@@ -492,11 +511,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+        var toggleButton = document.getElementById("menu");
 
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+        document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
     </script>
     </form>
 </body>
