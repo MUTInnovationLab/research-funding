@@ -1,7 +1,7 @@
 <?php
 $sname= "localhost";
 $unmae= "root";
-$password = "";
+$password = "RootUser";
 $db_name = "research_db";
 
 $conn = mysqli_connect($sname, $unmae, $password, $db_name);

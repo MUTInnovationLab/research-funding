@@ -16,7 +16,7 @@
             font-size: 16px;
             color: #333;
         }
-        .input {
+        .input, .inputSelect {
             display: block;
             border: 2px solid #ccc;
             width: 95%;
@@ -91,6 +91,10 @@
         /* margin: 20px auto; */
         margin-top: 0px;
         }
+        .inputSelect:focus {
+            width:auto ;
+        }
+
     </style>
 </head>
 <?php
@@ -266,7 +270,7 @@
                 <label style="margin-top: 10px;"><b>Confirm Staff Number</b></label>
                 <input type="password" class="input" name="cpassword" placeholder="Confirm Staff Number"></input>
                 <label style="margin-top: 10px;"><b>Role</b></label>
-                <select name='role' class='input'>
+                <select name='role' class='inputSelect'>
                 <option value='1'>Stage 1</option> <option value='2'>Stage 2</option>   <option value="3">Admin</option>
                 </select>
                 <label></label>

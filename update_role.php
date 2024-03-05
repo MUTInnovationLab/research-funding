@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Update Staff</title>
     <style>
-        .input {
+        .inputSelect {
             display: block;
             border: 2px solid #ccc;
             width: 98%;
@@ -20,6 +20,10 @@
             height: 44px;
             border-radius: 5px;
         }
+        .inputSelect:focus {
+            width: auto;
+        }
+
         label {
             font-size: 16px;
             margin-left: 10px;
@@ -189,7 +193,7 @@ if(isset($_POST['btn_update'])){
                     <p class="success"><?php echo $_GET['success']; ?></p>
                 <?php } ?>
                 <label style="margin-top: 10px;"><b>Role</b></label>
-                <select name='role' class='input'>
+                <select name='role' class='inputSelect'>
                 <option value='1'>Stage 1</option>   <option value="2">Stage 2</option> <option value='3'>Stage 3 - Admin</option>
                 <option value='Blocked'>Block Account</option>
                 </select>

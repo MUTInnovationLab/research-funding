@@ -12,6 +12,7 @@
     <style>
         body {
             background-color: lightcoral;
+            font-family: 'Arial', sans-serif;
         }
 
         input,
@@ -28,6 +29,9 @@
             transition: .3s;
         }
 
+        .inputSelect:focus {
+  width: auto; /* or any fixed width you prefer */
+}
         h6 {
             /* width:19000px; */
             /* border:2px solid #aaa; */
@@ -122,23 +126,37 @@
                 width: 100%;
             }
         }
+
+        @media (max-width: 700px) {
+ form {
+      margin-top: -60px;
+    }
+}
+
+
     </style>
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-3">
+                <h2>Application for Funds: Presentations at National Congresses, Conferences, or Symposia</h2>
+            </nav>
     <form action="check-apply.php" method="post" enctype="multipart/form-data" autocomplete="off">
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-                <h2>Application for Funds: Presentations at National Congresses, Conferences, or Symposia</h2>
-            </nav>
+           
 
             <div class="container-fluid px-2">
                 <div class="row my-5">
-                    <h4 class="fs-4 mb-3">MUT Research Grant: In terms of a decision of Council, depending on the availability of funds, MUT will consider
+
+                <details>
+<summary>MUT Research Grant:</summary>
+<h4 class="fs-4 mb-3">MUT Research Grant: In terms of a decision of Council, depending on the availability of funds, MUT will consider
                         contributing towards the expenses for presentation (oral and poster) at conferences, congresses and symposia. Conference grants
                         are an investment in the research agenda of MUT and applicants are expected to contribute to MUT Research Days and/or Seminar
                         Series before grants will be considered.</h4>
+</details>
+                   
                     <div class="content" style="border: 1px solid; width: 98%; margin-left: 10px; border-radius: 10px; margin-top: 5px;">
                         <h4 style="text-align: center;">Personal Particulars</h4>
                         <!-- --------------------------------DISPLAY ERROR AND SUCCESS MESSAGE-------------------------------- -->
@@ -149,7 +167,7 @@
                             <p class="success"><?php echo $_GET['success']; ?></p>
                         <?php } ?>
                         <!-- ------------------------------------------------------------------------------------- -->
-                        <select name='title' class='input'>
+                        <select name='title' class='inputSelect'>
                             <option value="Prof">Prof</option>
                             <option value='Dr'>Dr</option>
                             <option value='Mr'>Mr</option>
@@ -293,12 +311,12 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            var el = document.getElementById("wrapper");
-            var toggleButton = document.getElementById("menu-toggle");
+            // var el = document.getElementById("wrapper");
+            // var toggleButton = document.getElementById("menu-toggle");
 
-            toggleButton.onclick = function() {
-                el.classList.toggle("toggled");
-            };
+            // toggleButton.onclick = function() {
+            //     el.classList.toggle("toggled");
+            // };
         </script>
     </form>
 </body>

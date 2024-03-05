@@ -85,6 +85,8 @@
         #page-content-wrapper {
             flex-grow: 1;
         }
+
+        
     </style>
 </head>
 <?php
