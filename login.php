@@ -48,6 +48,10 @@ body{
   place-items: center;
   text-align: center;
   background-size: cover; 
+  background-image: url('img/view2.jpg');
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  height: 100vh; 
 }
 
 .content{
@@ -151,6 +155,7 @@ button:hover,
 
 @media only screen and (max-width: 300px) {
     /* Adjustments for smaller screens */
+    
     .content {
       width: 100%; /* Further adjusted width for smaller screens */
       padding: 30px 15px; /* Further adjusted padding for smaller screens */

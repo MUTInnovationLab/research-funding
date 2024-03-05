@@ -49,6 +49,10 @@ body{
   place-items: center;
   text-align: center;
   background-size: cover; 
+  background-image: url('img/view1.jpg');
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .content{

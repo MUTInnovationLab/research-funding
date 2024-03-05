@@ -56,6 +56,7 @@
         font-family: 'Roboto', sans-serif; /* Use a suitable font family */
         font-size: 16px; /* Adjust font size as needed */
         color: #333; /* Set a base text color */
+
     }
 
     h2 {
