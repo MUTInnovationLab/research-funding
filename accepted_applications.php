@@ -343,7 +343,7 @@ if(empty($currentUser)) $currentUser = "Default User";
         };
 
         document.body.addEventListener('click', function(event) {
-        var menu = document.getElementById('menu'); // Assuming your menu has an id 'menu'
+        var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
 
         // Check if the click target is outside the menu and the menu is currently open
         if (!menu.contains(event.target) && el.classList.contains("toggled")) {
