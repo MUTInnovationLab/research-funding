@@ -199,6 +199,7 @@
                     echo "<h4 style='text-align:center; margin-bottom:20px;'>Existing Staff Members</h4>";
                     if ($result-> num_rows > 0){	
                         echo "<div class='table-container scrollable-table'>";
+                        
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -279,6 +280,15 @@
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+        document.body.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
+
+            // Check if the click target is outside the menu and the menu is currently open
+            if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+                el.classList.remove("toggled"); // Close the menu
+            }
+            });
     </script>
     </form>
 </body>
