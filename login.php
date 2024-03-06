@@ -62,7 +62,7 @@ body{
   margin-top: 100px;
   box-shadow: -3px -3px 9px #aaa9a9a2,
               3px 3px 7px rgba(147, 149, 151, 0.671);
- 
+  backdrop-filter: blur(1px);
 }
 
 .content .text{

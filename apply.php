@@ -13,6 +13,12 @@
         body {
             background-color: lightcoral;
             font-family: 'Arial', sans-serif;
+            background-size: cover; 
+            background-image: url('img/view2.jpg');
+            /* background-position: center; */
+         
+            height: 100vh; 
+
         }
 
         input,
@@ -42,6 +48,18 @@
             padding: 8px;
             /* box-sizing:border-box; */
             /* transition:.3s; */
+            color:white;
+        }
+      
+        h4,h2{
+            color:white;
+        }
+        summary{
+            color:lightgray
+        }
+        details{
+            background-color: rgba(128, 0, 0, 1); 
+            border-radius: 10px;
         }
 
         .btn:hover {

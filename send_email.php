@@ -5,19 +5,12 @@ $email = $_SESSION['email_email'];
 $body = $_SESSION['email_body'];
 $location = $_SESSION['location'];
 
-/*##########Script Information#########
-  # Purpose: Send mail Using PHPMailer#
-  #          & Gmail SMTP Server 	  #
-  # Created: 24-11-2019 			  #
-  #	Author : Hafiz Haider			  #
-  # Version: 1.0					  #
-  # Website: www.BroExperts.com 	  #
-  #####################################*/
+
 
 //Include required PHPMailer files
-	require 'includes/PHPMailer.php';
-	require 'includes/SMTP.php';
-	require 'includes/Exception.php';
+	require 'includes/phpmailer/PHPMailer.php';
+	require 'includes/phpmailer/SMTP.php';
+	require 'includes/phpmailer/Exception.php';
 //Define name spaces
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
@@ -41,7 +34,7 @@ $location = $_SESSION['location'];
 //Email subject
 	$mail->Subject = $subject;
 //Set sender email
-	$mail->setFrom('vgwala149@gmail.com');
+	$mail->setFrom($email );
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment
