@@ -87,6 +87,10 @@
         /* margin: 20px auto; */
         margin-top: 0px;
         }
+        .fullpage{
+            height:100vh !important;
+
+        }
     </style>
 </head>
 <?php
@@ -137,7 +141,7 @@ if(isset($_POST['btn_update'])){
 
 <body>
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
-<div class="d-flex" id="wrapper">
+<div class="fullpage d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
@@ -216,6 +220,15 @@ if(isset($_POST['btn_update'])){
         toggleButton.onclick = function () {
             el.classList.toggle("toggled");
         };
+
+        document.body.addEventListener('click', function(event) {
+        var menu = document.getElementById('menu-toggle'); // Assuming your menu has an id 'menu'
+
+        // Check if the click target is outside the menu and the menu is currently open
+        if (!menu.contains(event.target) && el.classList.contains("toggled")) {
+            el.classList.remove("toggled"); // Close the menu
+        }
+    });
     </script>
     </form>
 </body>
