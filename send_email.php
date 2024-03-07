@@ -8,9 +8,9 @@ $location = $_SESSION['location'];
 
 
 //Include required PHPMailer files
-	require 'includes/phpmailer/PHPMailer.php';
-	require 'includes/phpmailer/SMTP.php';
-	require 'includes/phpmailer/Exception.php';
+	require 'includes/PHPMailer.php';
+	require 'includes/SMTP.php';
+	require 'includes/Exception.php';
 //Define name spaces
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
