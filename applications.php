@@ -144,7 +144,8 @@
                     $sql = "SELECT * FROM applications WHERE statuss='Waiting For HOD Approval'";
                     $result = $conn-> query($sql);
                     echo "<h4 style='text-align:center; margin-bottom:20px;'>Applications Waiting For Your Approval</h4>";
-                    if ($result-> num_rows > 0){	
+                    if ($result-> num_rows > 0){
+                        echo "<div class='table-container scrollable-table'>";	
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -174,7 +175,7 @@
                             echo "<td><button type='submit' class='btn' value='$email' name='btn_view'>View</button></td>";
                             echo "</tr>";   
                             }
-                            echo "</tbody>";   echo "<table>";    echo "</div>";
+                            echo "</tbody>";   echo "</table>";  echo "</div>";   echo "</div>";
                         } else{
                             echo "<div class='content' style='border: 1px solid; border-radius: 10px;'>";
                             echo "<p class='error' style='margin-top: 10px' >No Records Found!!!</p>";

@@ -367,7 +367,7 @@
 
                             // ------------------------------------------------------------
                             echo "<h4 style='text-align:center; margin-bottom:20px;'>Budget</h4>";
-
+                            echo "<div class='table-container scrollable-table'>";
                             // if (isset($_GET['error'])) {  echo "<p class='error'>Please Accept All The Ammounts</p>"; }
                             echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                             echo "<thead>";
@@ -428,7 +428,8 @@
 
                             echo "</tr>";
                             echo "</tbody>";
-                            echo "<table>";
+                            echo "</table>";
+                            echo "</div>";
                             // ------------------------------------------------------------
                             echo "</div>";
 
