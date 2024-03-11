@@ -78,6 +78,10 @@
         background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
         z-index: 2; /* Ensure the overlay is on top of the content */
     }
+    .fullpage{
+            height:100vh !important;
+
+        }
     </style>
 </head>
 <?php
@@ -90,7 +94,7 @@
 
 <body>
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
-    <div class="d-flex" id="wrapper">
+    <div class="fullpage  d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <!-- <button id="close-button"><i class="fas fa-times"></i></button> -->
