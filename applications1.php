@@ -85,6 +85,9 @@
             background-color: rgba(255, 255, 255, 0.7);
             z-index: 2;
         }
+        .table-container,.table-container2{
+          max-height: 450px;
+        }
     </style>
 </head>
 <?php

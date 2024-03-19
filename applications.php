@@ -69,7 +69,9 @@
 
         }
  
- 
+        .table-container{
+          max-height: 450px;
+        }
 
 
 

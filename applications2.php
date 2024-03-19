@@ -90,6 +90,10 @@
             height:100% !important;
 
         }
+      .table-container{
+          max-height: 450px;
+        }
+       
     </style>
 </head>
 <?php
