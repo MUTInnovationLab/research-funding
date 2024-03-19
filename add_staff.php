@@ -211,7 +211,6 @@
                     echo "<h4 style='text-align:center; margin-bottom:20px;'>Existing Staff Members</h4>";
                     if ($result-> num_rows > 0){	
                         echo "<div class='table-container scrollable-table'>";
-                        
                         echo "<table class='table bg-white rounded shadow-sm  table-hover'>";
                         echo "<thead>";
                         echo "<tr>";
@@ -263,8 +262,6 @@
                 <input type="text" class="input" name="name" placeholder="Full Name(s)"></input>
                 <label style="margin-top: 10px;"><b>Email Address</b></label>
                 <input type="email" class="input" name="email" placeholder="Email Address"></input>
-                <!-- <label style="margin-top: 10px;"><b>Staff Number</b></label>
-                <input type="email" class="input" name="snumber" placeholder="Staff Number"></input> -->
                 <label style="margin-top: 10px;"><b>Staff Number</b></label>
                 <input type="password" class="input" name="password" placeholder="Staff Number"></input>
                 <label style="margin-top: 10px;"><b>Confirm Staff Number</b></label>
