@@ -36,8 +36,8 @@
         }
 
         .inputSelect:focus {
-  width: auto; /* or any fixed width you prefer */
-}
+          width: auto; /* or any fixed width you prefer */
+           }
         h6 {
             /* width:19000px; */
             /* border:2px solid #aaa; */
