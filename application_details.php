@@ -388,43 +388,43 @@
 
                             echo "<tr>";  echo "<th scope='row'>1</th>";  echo "<td>Air Ticket (Return)</td>"; 
                             echo "<td>R$ticket</td>"; 
-                            echo "<td><input type='number' name='amount1' style='width:50%; height:25px;' placeholder='$ticket'></td>";
+                            echo "<td><input type='number' name='amount1' style='width:100px; height:25px;' placeholder='$ticket'></td>";
                             echo "<td><input type='text' name='comment1' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select1' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>";
 
                             echo "<tr>";  echo "<th scope='row'>2</th>";  echo "<td>Group Transportation / Car Hire</td>"; 
                             echo "<td>R$transportation</td>"; 
-                            echo "<td><input type='number' name='amount2' style='width:50%; height:25px;' placeholder='$transportation'></td>";
+                            echo "<td><input type='number' name='amount2' style='width:100px; height:25px;' placeholder='$transportation'></td>";
                             echo "<td><input type='text' name='comment2' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select2' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>";
 
                             echo "<tr>";  echo "<th scope='row'>3</th>";  echo "<td>Registration Fee</td>"; 
                             echo "<td>R$registration</td>"; 
-                            echo "<td><input type='number' name='amount3' style='width:50%; height:25px;' placeholder='$registration'></td>";
+                            echo "<td><input type='number' name='amount3' style='width:100px; height:25px;' placeholder='$registration'></td>";
                             echo "<td><input type='text' name='comment3' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select3' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>"; 
 
                             echo "<tr>";  echo "<th scope='row'>4</th>";  echo "<td>Accommodation</td>"; 
                             echo "<td>R$accommodation</td>"; 
-                            echo "<td><input type='number' name='amount4' style='width:50%; height:25px;' placeholder='$accommodation'></td>";
+                            echo "<td><input type='number' name='amount4' style='width:100px; height:25px;' placeholder='$accommodation'></td>";
                             echo "<td><input type='text' name='comment4' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select4' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>"; 
                             
                             echo "<tr>";  echo "<th scope='row'>5</th>";  echo "<td>Subsistence</td>"; 
                             echo "<td>R$subsistence</td>"; 
-                            echo "<td><input type='number' name='amount5' style='width:50%; height:25px;' placeholder='$subsistence'></td>";
+                            echo "<td><input type='number' name='amount5' style='width:100px; height:25px;' placeholder='$subsistence'></td>";
                             echo "<td><input type='text' name='comment5' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select5' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>"; 
 
                             echo "<tr>";  echo "<th scope='row'>6</th>";  echo "<td>Other Costs (Specify)</td>"; 
                             echo "<td>R$otherCosts</td>"; 
-                            echo "<td><input type='number' name='amount6' style='width:50%; height:25px;' placeholder='$otherCosts'></td>";
+                            echo "<td><input type='number' name='amount6' style='width:100px; height:25px;' placeholder='$otherCosts'></td>";
                             echo "<td><input type='text' name='comment6' style='width:100%; height:25px;'></td>";
                             echo "<td><select name='select6' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>"; 
 
                             echo "<tr>";  echo "<th scope='row'>7</th>";  echo "<td>Total Costs</td>"; 
                             echo "<td>R$totalCost</td>"; 
-                            echo "<td><input type='number' name='amount' style='width:50%; height:25px;' placeholder='None' disabled></td>";
+                            echo "<td><input type='number' name='amount' style='width:100px; height:25px;' placeholder='None' disabled></td>";
                             echo "<td><input type='text' name='comment' style='width:100%; height:25px;' placeholder='None' disabled></td>";
                             echo "<td><input type='text' name='comment' style='width:100%; height:25px;' placeholder='None' disabled></td>";
                             // echo "<td><select name='select7' style='width:100%;'><option value='No'>No</option>  <option value='Yes'>Yes</option></select></td>"; 
