@@ -53,7 +53,7 @@
         margin-top: 0px;
         }
         .fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
     </style>

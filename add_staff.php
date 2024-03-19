@@ -95,7 +95,7 @@
             width:auto ;
         }
         .fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
     </style>
@@ -128,10 +128,11 @@
      $sql1 = "SELECT * FROM login_details WHERE email='$email'";
      $result1 = $conn-> query($sql1);
      if ($result1-> num_rows > 0){	
-        header("Location: admin.php?error=User Already Exist!!!."); exit();  
+        header("Location: admin.php?error=User Already Exist!!!."); exit(); 
+        header("Location: add_staff.php?error=All Fields Are Required !!! Please Try Again."); exit();   
      }else{
         if (empty($name) || empty($email) || empty($password) || empty($cpassword) || empty($role)){
-            header("Location: add_staff.php?error=All Fields Are Required !!! Please Try Again."); exit();  
+            header("Location: add_staff.php?error=User Already Exist!!!."); exit();  
         }else if($password != $cpassword){
             header("Location: add_staff.php?error=Staff Number Does Not Match !!! Please Try Again."); exit(); 
         }else{

@@ -60,7 +60,7 @@
             .container-fluid.px-4 {
                 padding: 1px;
             }.fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
     </style>

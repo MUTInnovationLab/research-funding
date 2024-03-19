@@ -72,7 +72,7 @@
             overflow-x: scroll;
         }
         .fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
         #sidebar-overlay {

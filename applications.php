@@ -65,7 +65,7 @@
 
  
     .fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
  

@@ -79,7 +79,7 @@
         z-index: 2; /* Ensure the overlay is on top of the content */
     }
     .fullpage{
-            height:100vh !important;
+            height:100% !important;
 
         }
     </style>
