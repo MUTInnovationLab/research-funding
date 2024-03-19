@@ -15,6 +15,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             color: #333;
+           
         }
 
         h2 {
@@ -70,7 +71,10 @@
             height: auto;
             overflow-x: scroll;
         }
+        .fullpage{
+            height:100vh !important;
 
+        }
         #sidebar-overlay {
             display: none;
             position: fixed;
@@ -92,7 +96,7 @@ if (empty($currentUser)) $currentUser = "Default User";
 
 <body>
     <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
-        <div class="d-flex" id="wrapper">
+        <div  class="fullpage d-flex" id="wrapper">
             <!-- Sidebar -->
             <div class="bg-white" id="sidebar-wrapper">
             <!-- <button id="close-button"><i class="fas fa-times"></i></button> -->

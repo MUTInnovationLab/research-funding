@@ -52,6 +52,10 @@
         /* margin: 20px auto; */
         margin-top: 0px;
         }
+        .fullpage{
+            height:100vh !important;
+
+        }
     </style>
 </head>
 <?php
@@ -64,7 +68,7 @@ if(empty($currentUser)) $currentUser = "Default User";
 
 <body>
 <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
-    <div class="d-flex" id="wrapper">
+    <div class="fullpage d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">

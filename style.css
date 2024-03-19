@@ -85,6 +85,7 @@
   .table-container {
     height:auto;
     overflow-y: auto;  }
+ 
   
   @media (min-width: 1051px) {
     #sidebar-wrapper {
