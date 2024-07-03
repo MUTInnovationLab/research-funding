@@ -94,21 +94,20 @@
 <?php
 session_start();
 include "conn.php";
- if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity'] > $timeout_duration)) {
-    // Destroy session and redirect to login
+ // Redirect to login if not logged in or session timed out
+if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
     header("Location: login.php");
     exit();
 }
 
-// Update last activity time
-$_SESSION['last_activity'] = time();
+$_SESSION['last_activity'] = time(); // Update last activity time
 
-
-
+// Page content...
 $currentUser = $_SESSION['currentUser'];
 if (empty($currentUser)) $currentUser = "Default User";
+
 ?>
 
 <body>
