@@ -192,7 +192,7 @@ button:hover,
 <?php
 session_start();
 include "conn.php";
-
+$timeout_duration = 1800; // 30 minutes
 //FINDING CURRENT DATE AND TIME
 $date_time = date("Y/m/d")."-".date("h:i:sa");
 
@@ -231,6 +231,7 @@ $password = validate($_POST['password']);
               if (password_verify($password, $stored_password)) {
               $_SESSION['currentUser'] = $name;
               $_SESSION['c_email'] = $email;
+        $_SESSION['last_activity'] = time(); // Record current time
              if($role == "1"){ echo"<script>location.href = 'applications.php?'</script>"; }
              else if($role == "2"){  echo"<script>location.href = 'applications1.php?'</script>";  }
              else if($role == "3"){  echo"<script>location.href = 'applications2.php?'</script>";  };

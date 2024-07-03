@@ -94,6 +94,19 @@
 <?php
 session_start();
 include "conn.php";
+ if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity'] > $timeout_duration)) {
+    // Destroy session and redirect to login
+    session_unset();
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+// Update last activity time
+$_SESSION['last_activity'] = time();
+
+
+
 $currentUser = $_SESSION['currentUser'];
 if (empty($currentUser)) $currentUser = "Default User";
 ?>
