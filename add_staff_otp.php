@@ -88,9 +88,20 @@
 <?php
  session_start(); 
  include "conn.php";
- $currentUser = $_SESSION['currentUser'];
+ if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity']) > 1800) {
+    session_unset();
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+$_SESSION['last_activity'] = time(); // Update last activity time
+
+// Page content...
+$currentUser = $_SESSION['currentUser'];
+if (empty($currentUser)) $currentUser = "Default User";
  $c_email = $_SESSION['c_email'];
- if(empty($currentUser)) $currentUser = "Default User";
+ 
 
  if(isset($_POST['btn_submit'])){
     function validate($data){
