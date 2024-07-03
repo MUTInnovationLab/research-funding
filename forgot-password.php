@@ -74,23 +74,25 @@ body{
   position: relative;
 }
 
-.field input{
+.field input {
   height: 100%;
   width: 100%;
   padding-left: 45px;
   font-size: 18px;
   outline: none;
   border: none;
-  color: #e0d2d2;
-  border: 1px solid rgba(255, 255, 255, 0.438);
+  color: #e0d2d2; /* Text color */
+  background-color: rgba(0, 0, 0, 1); /* Semi-transparent black */
+  border: 1px solid rgba(255, 255, 255, 0.438); /* Border color */
   border-radius: 8px;
-  background: rgba(105, 105, 105, 0);
 }
 
+.field input:hover {
+  background-color: rgba(0, 0, 0, 0.3); /* Darker semi-transparent black on hover */
+}
 .field input::placeholder{
   color: #e0d2d2a6;
 }
-
 .field:nth-child(2){
   margin-top: 20px;
 }
@@ -102,20 +104,19 @@ body{
   color: #ffffff;
 }
 
-button{
-  margin: 25px 0 0 0;
+button {
+  margin-top: 25px;
   width: 100%;
   height: 50px;
-  color: rgb(238, 226, 226);
+  color: #eee; /* Text color */
   font-size: 18px;
   font-weight: 600;
-  border: 2px solid rgba(255, 255, 255, 0.438);
+  border: none;
   border-radius: 8px;
-  background: rgba(105, 105, 105, 0);
- margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
   outline: none;
   cursor: pointer;
-  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
 }
  
 .content .or{

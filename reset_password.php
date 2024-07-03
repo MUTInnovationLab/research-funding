@@ -90,11 +90,11 @@ body{
   color: #e0d2d2;
   border: 1px solid rgba(255, 255, 255, 0.438);
   border-radius: 8px;
-  background: rgba(105, 105, 105, 0);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
 }
 
 .field input::placeholder{
-  color: #e0d2d2a6;
+  color: white;
 }
 
 .field:nth-child(2){
@@ -117,7 +117,7 @@ button{
   font-weight: 600;
   border: 2px solid rgba(255, 255, 255, 0.438);
   border-radius: 8px;
-  background: rgba(105, 105, 105, 0);
+  background-color: rgba(0, 0, 0, 0.5);
  margin-top: 40px;
   outline: none;
   cursor: pointer;
