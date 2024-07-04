@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="tableScroll.css" />
     <title>Application Details</title>
+    <link rel="icon" href="/research.png" type="image/png">
+<meta name="description" content="Our platform facilitates research funding by providing an easy-to-use application process for individuals and organizations seeking financial support for their projects. We aim to streamline the funding application process, making it more accessible and efficient for researchers to obtain the necessary resources to advance their work.">
+
     <style>
         .input{
             height: 35px; 
