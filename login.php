@@ -2,13 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <title>Log In </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="description" content="Our platform simplifies research funding with an easy application process."> -->
+
 <link rel="icon" href="research.png" type="image/png">
-<meta name="description" content="Our platform facilitates research funding by providing an easy-to-use application process for individuals and organizations seeking financial support for their projects. We aim to streamline the funding application process, making it more accessible and efficient for researchers to obtain the necessary resources to advance their work.">
+
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
