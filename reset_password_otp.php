@@ -1,16 +1,62 @@
-<!--Design by foolishdeveloper.com-->
+<?php
+session_start();
+
+include "conn.php"; // Assuming this file handles database connection
+
+// Retrieve necessary session data
+$reset_email = $_SESSION['reset_email'] ?? '';
+$reset_password = $_SESSION['reset_password'] ?? '';
+$hashed_reset_password = password_hash($reset_password, PASSWORD_DEFAULT);
+$reset_otp = $_SESSION['reset_otp'] ?? '';
+
+// Function to validate data
+function validate($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+// Handle form submissions
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['btn_login'])) {
+        header("Location: login.php"); // Redirect to login page
+        exit();
+    }
+    
+    if(isset($_POST['btn_reset'])) {
+        $otp = validate($_POST['otp']);
+        
+        if (empty($otp)) {
+            header("Location: reset_password_otp.php?error=OTP is Required!!!");
+            exit();
+        } elseif ($otp != $reset_otp) {
+            header("Location: reset_password_otp.php?error=Incorrect OTP Code!!!");
+            exit();
+        } else {
+            // Update password in database
+            $sql1 = "UPDATE login_details SET passwords='$hashed_reset_password' WHERE email='$reset_email'";
+            if ($conn->query($sql1) === TRUE) {
+                $_SESSION['msg1'] = "Thank You!";
+                $_SESSION['msg2'] = "Your password has been changed successfully.";
+                $_SESSION['msg3'] = "<script>location.href = 'login.php'</script>";
+                header("Location: thankyou.php");
+                exit();
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<title>Log In </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="research.png" type="image/png">
-<!-- <meta name="description" content="Our platform facilitates research funding by providing an easy-to-use application process for individuals and organizations seeking financial support for their projects. We aim to streamline the funding application process, making it more accessible and efficient for researchers to obtain the necessary resources to advance their work."> -->
-
- <style>
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
   margin:0;
@@ -182,70 +228,23 @@ button:hover,
   }
 </style>
 </head>
-<?php
-session_start(); 
-include "conn.php";
-$reset_email = $_SESSION['reset_email'];
-$reset_password = $_SESSION['reset_password'];
-$hashed_reset_password = password_hash($reset_password, PASSWORD_DEFAULT);
-$reset_otp = $_SESSION['reset_otp'];
-
-//FINDING CURRENT DATE AND TIME
-$date_time = date("Y/m/d")."-".date("h:i:sa");
-
-//METHOD TO VALIDATE DATA
-function validate($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-if(isset($_POST['btn_login'])) {
-  echo"<script>location.href = 'login.php?'</script>";
-}
-
-if(isset($_POST['btn_reset'])) {
-$otp = validate($_POST['otp']);
-    
-	//IF IT EMPTY, DISPLAY ERROR MESSAGE
-  if (empty($otp)){
-		header("Location:  reset_password_otp.php?error=OTP is Required!!!"); exit();
-	} else if($otp != $reset_otp){
-    header("Location:  reset_password_otp.php?error=Incorrect OTP Code!!!"); exit();
-  }else{
-      $sql1 = "UPDATE login_details SET passwords='$hashed_reset_password' WHERE email='$reset_email'";
-      if ($conn->query($sql1) === TRUE) {
-        $_SESSION['msg1'] = "Thank You!";
-        $_SESSION['msg2'] = "Your password has been changed successfully.";
-        $_SESSION['msg3'] = "<script>location.href = 'login.php?'</script>";
-        echo"<script>location.href = 'thankyou.php?'</script>";
-        // echo"<script>location.href = 'login.php?'</script>";
-      }
-  }
-}
-?>
-
 <body>
-  <!-- <form action="#" method="post" enctype="multipart/form-data" autocomplete="off"> -->
-  <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-  <!-- <form method="post"> -->
-  <div class="content" style="margin-top: 150px;">
-  <div class="text" style="margin-top: -20px;">Reset Password</div>
-      <!-- --------------------------------DISPLAY ERROR AND SUCCESS MESSAGE-------------------------------- -->
-      <?php if (isset($_GET['error'])) { ?>
-          <p class="error"><?php echo $_GET['error']; ?></p>
-      <?php } ?>
-      <?php if (isset($_GET['success'])) { ?>
-          <p class="success"><?php echo $_GET['success']; ?></p>
-      <?php } ?>
-   
-      <div class="field" style="margin-top: -10px;"><span class="fa fa-user" style="margin-top: 10px;"></span>
-        <input type="number" style="margin-top:10px;" name="otp" placeholder="OTP Code">
-      </div></br>
-      <button type="submit" name="btn_reset" style="margin-top:10px;">Submit</button>
-      <button type="submit" name="btn_login" style="margin-top:10px;">Cancel</button>
+    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+        <div class="content" style="margin-top: 150px;">
+            <div class="text">Reset Password</div>
+            <!-- Display error and success messages -->
+            <?php if (isset($_GET['error'])) { ?>
+                <p class="error"><?php echo htmlspecialchars($_GET['error']); ?></p>
+            <?php } ?>
+            <?php if (isset($_GET['success'])) { ?>
+                <p class="success"><?php echo htmlspecialchars($_GET['success']); ?></p>
+            <?php } ?>
+            <div class="field"><span class="fa fa-user"></span>
+                <input type="number" name="otp" placeholder="OTP Code" required>
+            </div>
+            <button type="submit" name="btn_reset">Submit</button>
+            <button type="submit" name="btn_login">Cancel</button>
+        </div>
     </form>
-  </div>
 </body>
 </html>
