@@ -1,3 +1,70 @@
+<?php
+session_start(); 
+
+include "conn.php";
+
+//FINDING CURRENT DATE AND TIME
+$date_time = date("Y/m/d")."-".date("h:i:sa");
+
+//METHOD TO VALIDATE DATA
+function validate($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if(isset($_POST['btn_login'])) {
+  echo"<script>location.href = 'login.php?'</script>";
+}
+
+if(isset($_POST['btn_reset'])) {
+$email = validate($_POST['email']);
+$cpassword = validate($_POST['cpassword']);
+$password = validate($_POST['password']);
+    
+	//IF IT EMPTY, DISPLAY ERROR MESSAGE
+  if (empty($email) || empty($password) || empty($cpassword)){
+  header("Location:  reset_password.php?error=All Fields Are Required!!!"); exit();
+  }else if($password != $password){
+    header("Location:  reset_password.php?error=Passwords does not match!!!"); exit();
+  }else{
+    $sql9 = "SELECT * FROM login_details WHERE email='$email'";
+      $result9 = $conn-> query($sql9);
+      if ($result9-> num_rows > 0){	
+          while($row9 = $result9-> fetch_assoc()){	
+            $_SESSION['reset_email'] = $email;
+            $_SESSION['reset_password'] = $password;
+            $otp = rand();
+            $_SESSION['reset_otp'] = $otp;
+
+            $sql = "SELECT * FROM login_details WHERE email='$email'";
+            $result = $conn-> query($sql);
+            if ($result-> num_rows > 0){	
+                if($row = $result-> fetch_assoc()){    $name = $row['name'];  $status = $row['statuss'];   }
+            }
+
+            if($status != "Active"){
+              header("Location: reset_password.php?error=Your Account Has Been blocked. Please Contact The Administrator!!!"); exit(); 
+            }else{
+              $_SESSION['email_subject'] = "Research Funding Application";
+              $_SESSION['email_email'] = $email;
+              $_SESSION['email_body'] = "Dear $name<br><br>Your reset OTP password is - $otp
+              <br><br>Regards,<br>Research Funding Team";
+              $_SESSION['location'] = "<script>location.href = 'thankyou.php?'</script>";
+              // echo"<script>location.href = 'send_email.php?'</script>";
+              $_SESSION['msg1'] = "Thank You!";
+              $_SESSION['msg2'] = "OTP has been sent to $email";
+              $_SESSION['msg3'] = "<script>location.href = 'reset_password_otp.php?'</script>";
+              echo"<script>location.href = 'send_email.php?'</script>";
+            }
+          }
+      }else { header("Location: reset_password.php?error=Incorrect Username!!!"); exit(); }
+    }
+}
+?>
+<!-- start of HTML -->
+
 <!--Design by foolishdeveloper.com-->
 <!DOCTYPE html>
 <html lang="en">
@@ -186,70 +253,8 @@ button:hover,
   }
 </style>
 </head>
-<?php
-session_start(); 
-include "conn.php";
 
-//FINDING CURRENT DATE AND TIME
-$date_time = date("Y/m/d")."-".date("h:i:sa");
 
-//METHOD TO VALIDATE DATA
-function validate($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-if(isset($_POST['btn_login'])) {
-  echo"<script>location.href = 'login.php?'</script>";
-}
-
-if(isset($_POST['btn_reset'])) {
-$email = validate($_POST['email']);
-$cpassword = validate($_POST['cpassword']);
-$password = validate($_POST['password']);
-    
-	//IF IT EMPTY, DISPLAY ERROR MESSAGE
-  if (empty($email) || empty($password) || empty($cpassword)){
-  header("Location:  reset_password.php?error=All Fields Are Required!!!"); exit();
-  }else if($password != $password){
-    header("Location:  reset_password.php?error=Passwords does not match!!!"); exit();
-  }else{
-    $sql9 = "SELECT * FROM login_details WHERE email='$email'";
-      $result9 = $conn-> query($sql9);
-      if ($result9-> num_rows > 0){	
-          while($row9 = $result9-> fetch_assoc()){	
-            $_SESSION['reset_email'] = $email;
-            $_SESSION['reset_password'] = $password;
-            $otp = rand();
-            $_SESSION['reset_otp'] = $otp;
-
-            $sql = "SELECT * FROM login_details WHERE email='$email'";
-            $result = $conn-> query($sql);
-            if ($result-> num_rows > 0){	
-                if($row = $result-> fetch_assoc()){    $name = $row['name'];  $status = $row['statuss'];   }
-            }
-
-            if($status != "Active"){
-              header("Location: reset_password.php?error=Your Account Has Been blocked. Please Contact The Administrator!!!"); exit(); 
-            }else{
-              $_SESSION['email_subject'] = "Research Funding Application";
-              $_SESSION['email_email'] = $email;
-              $_SESSION['email_body'] = "Dear $name<br><br>Your reset OTP password is - $otp
-              <br><br>Regards,<br>Research Funding Team";
-              $_SESSION['location'] = "<script>location.href = 'thankyou.php?'</script>";
-              // echo"<script>location.href = 'send_email.php?'</script>";
-              $_SESSION['msg1'] = "Thank You!";
-              $_SESSION['msg2'] = "OTP has been sent to $email";
-              $_SESSION['msg3'] = "<script>location.href = 'reset_password_otp.php?'</script>";
-              echo"<script>location.href = 'send_email.php?'</script>";
-            }
-          }
-      }else { header("Location: reset_password.php?error=Incorrect Username!!!"); exit(); }
-    }
-}
-?>
 
 <body>
   <!-- <form action="#" method="post" enctype="multipart/form-data" autocomplete="off"> -->

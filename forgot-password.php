@@ -187,12 +187,6 @@ button:hover,
     form {
       width: 90%; 
     }
-
-
-
-
-
-    
   }
 </style>
 </head>
