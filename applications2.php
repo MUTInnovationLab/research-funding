@@ -134,7 +134,7 @@ if (empty($currentUser)) $currentUser = "Default User";
                         class="list-group-item list-group-item-action bg-transparent second-text"><i
                             ></i>Add Staff</a>
                     <!-- ------------------------------------------------------------------------------------------ -->
-                    <a href="login.php"
+                    <a href="logout.php"
                         class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                             class="fas fa-power-off me-2"></i>Logout</a>
                 </div>

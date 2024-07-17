@@ -17,6 +17,20 @@
     <?php
         session_start(); 
         include "conn.php";
+        // Redirect to login if not logged in or session timed out
+if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity']) > 1800) {
+    session_unset();
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+$_SESSION['last_activity'] = time(); // Update last activity time
+
+// Page content...
+$currentUser = $_SESSION['currentUser'];
+if (empty($currentUser)) $currentUser = "Default User";
+ $c_email = $_SESSION['c_email'];
         $msg1 = $_SESSION['msg1'];
         $msg2 = $_SESSION['msg2'];
         $msg3 = $_SESSION['msg3'];

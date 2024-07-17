@@ -64,8 +64,20 @@
 <?php
 session_start(); 
 include "conn.php";
+// Redirect to login if not logged in or session timed out
+if (!isset($_SESSION['currentUser']) || (time() - $_SESSION['last_activity']) > 1800) {
+    session_unset();
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+$_SESSION['last_activity'] = time(); // Update last activity time
+
+// Page content...
 $currentUser = $_SESSION['currentUser'];
-if(empty($currentUser)) $currentUser = "Default User";
+if (empty($currentUser)) $currentUser = "Default User";
+ $c_email = $_SESSION['c_email'];
 $email = $_SESSION['application_id'];
 ?>
 
@@ -85,7 +97,7 @@ $email = $_SESSION['application_id'];
                     <a style="margin-top: -25px;" href="add_staff.php" class="list-group-item list-group-item-action bg-transparent second-text"><i
                     ></i>Add Staff</a>
                 <!-- ------------------------------------------------------------------------------------------ -->
-                <a href="login.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
