@@ -7,8 +7,17 @@
 <title>Forgot Password</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="research.png" type="image/png">
-<!-- <meta name="description" content="Our platform facilitates research funding by providing an easy-to-use application process for individuals and organizations seeking financial support for their projects. We aim to streamline the funding application process, making it more accessible and efficient for researchers to obtain the necessary resources to advance their work."> -->
+
+
+
+
+
+
+
+
+
+
+
 
  <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -178,6 +187,12 @@ button:hover,
     form {
       width: 90%; 
     }
+
+
+
+
+
+    
   }
 </style>
 </head>
@@ -209,6 +224,7 @@ button:hover,
         <i href="check-login.php">Forgot Password</i >
         <span><i></i formaction="#">Sign Up</span>
       </div> -->
+      </div>
     </form>
   </div>
 </body>

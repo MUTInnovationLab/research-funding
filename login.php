@@ -7,7 +7,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Our platform simplifies research funding with an easy application process.">
-
 <link rel="icon" href="research.png" type="image/png">
 
  <style>
