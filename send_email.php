@@ -28,9 +28,10 @@ $location = $_SESSION['location'];
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "vgwala149@gmail.com";
+	$mail->Username = "researchfunding16@gmail.com";
 //Set gmail password
-	$mail->Password = "augzihvfqsdvfpav";
+	// $mail->Password = "augzihvfqsdvfpav";
+	$mail->Password = "lizwcsumhkctowlg";
 //Email subject
 	$mail->Subject = $subject;
 //Set sender email
